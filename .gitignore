@@ -1,4 +1,2 @@
 .DS_Store
 data/
-echo "data/"
-echo ".smartroutes/"
