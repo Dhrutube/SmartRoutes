@@ -2,3 +2,4 @@
 data
 .smartroutes
 .claude
+generate_html_visualizations.py
