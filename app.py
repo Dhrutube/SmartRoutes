@@ -5,7 +5,7 @@ st.set_page_config(page_title="SmartRoutes", layout="wide")
 st.title("SmartRoutes — San Diego MTS")
 st.markdown("🚌 A geospatial data project aimed at improving San Diego MTS bus routes by analyzing population density and pedestrian foot-traffic.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Pedestrian Heatmap", "Demand v.s. Bus Routes", "Map of Underserved Zones Based on Income", "Map of Underserved Zones Based on Density"])
+tab1, tab2, tab3 = st.tabs(["Pedestrian Heatmap", "Map of Underserved Zones Based on Income", "Map of Underserved Zones Based on Density"])
 
 with tab1:
     with open("html_visualizations/san_diego_heatmap.html", "r") as f:
