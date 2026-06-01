@@ -7,20 +7,15 @@ transit supply does not keep up with demand.
 SmartRoutes combines U.S. Census demographics, GTFS transit-stop locations, and
 CityIQ pedestrian foot-traffic to score each census tract on a *need vs. supply*
 gap, then clusters high-gap tracts into candidate zones for new or improved bus
-routes. The results are presented as interactive maps and charts, both in a
+routes. The results are presented as interactive maph, both in a
 Streamlit web app and as standalone HTML files.
 
-## What it does
+## What it shows
 
-- **Income distribution** — median household income by census tract (choropleth)
-  and the count of tracts per income bracket.
-- **Transit stop density** — transit stops per km² by tract, plus a dot map of
-  every stop colored by agency.
-- **Income vs. transit density** — scatter with OLS fit, marginal histograms, and
-  a low- vs. high-income boxplot, with correlation/significance statistics
-  (Pearson, Spearman, Welch t-test, Mann–Whitney).
-- **Underserved zones** — a composite *need index* (population density, renter
-  share, and inverse income) compared against transit supply to compute a
+- **Pedestrian Heatmap** — a heatmap of pedestrian foot-traffic. Useful for
+  determining which areas have a demand for transit stops.
+- **Underserved zones** — a composite *need index* (population density
+  and inverse income) compared against transit supply to compute a
   `gap_score`. Tracts above the 75th-percentile gap are flagged underserved and
   clustered into geographic zones via hierarchical clustering.
 
@@ -37,7 +32,6 @@ SmartRoutes/
 │   ├── underserved_zones_map_income.html
 │   ├── underserved_zones_map_density.html
 │   └── ...
-├── output_csvs/                        # Derived CSVs (income & stop-density)
 ├── data/                               # Raw datasets (gitignored — see below)
 │   ├── cityiq.io-pedestrians-san_diego-1/
 │   ├── san-diego-census-geopandas/
@@ -110,6 +104,8 @@ To rebuild the maps and charts from the raw data (requires the datasets in
 
 ```bash
 python script/generate_html_visualizations.py
+python script/06_demand_model.py
+python script/07_gap_analysis.py
 ```
 
 The script writes interactive HTML for every chart and map, prints progress for
