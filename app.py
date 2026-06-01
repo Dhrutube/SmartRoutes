@@ -16,7 +16,7 @@ with tab2:
         st.components.v1.html(f.read(), height=700, scrolling=False)
         
 with tab3:
-    with open("html_visulizations/underserved_zones_map.html", "r") as f:
+    with open("html_visualizations/underserved_zones_map.html", "r") as f:
         st.components.v1.html(f.read(), height=700, scrolling=False)
         
 with tab4:
